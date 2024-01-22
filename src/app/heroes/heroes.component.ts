@@ -6,6 +6,7 @@ import { NgFor } from '@angular/common';
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component'
 import { HeroService } from '../hero.service';
 import { MessageService } from '../messages/message.service'
+import { RouterModule } from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,8 @@ import { MessageService } from '../messages/message.service'
     HeroDetailComponent,
     CommonModule, 
     FormsModule,
-    NgFor],
+    NgFor,
+    RouterModule],
   templateUrl: './heroes.component.html',
   styleUrl: './heroes.component.css'
 })
