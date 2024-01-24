@@ -4,19 +4,13 @@ import { HEROES } from './mock-heroes';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './messages/message.service';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class HeroService {
 
-  // getHeroes(): Hero[]{
-  //   return HEROES
-  // }
+  constructor(private messageService: MessageService) { }
 
-  constructor(private messageService : MessageService) { }
-  
-  getHeroes() : Observable<Hero[]> { 
-    const heroes = of(HEROES)
+  getHeroes(): Observable<Hero[]> {
+    const heroes = of(HEROES);
     this.messageService.add('HeroService: fetched heroes');
     return heroes;
   }
@@ -28,6 +22,4 @@ export class HeroService {
     this.messageService.add(`HeroService: fetched hero id=${id}`);
     return of(hero);
   }
-
- 
 }

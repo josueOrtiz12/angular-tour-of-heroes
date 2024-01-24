@@ -1,8 +1,7 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {NgIf, UpperCasePipe} from '@angular/common';
 import {FormsModule} from '@angular/forms';
-import {Hero} from '../interface/hero';
-
+import { Hero } from '../interface/hero';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { HeroService} from '../hero.service';
@@ -19,7 +18,7 @@ import { HeroService} from '../hero.service';
   templateUrl: './hero-detail.component.html',
   styleUrl: './hero-detail.component.css'
 })
-export class HeroDetailComponent {
+export class HeroDetailComponent implements OnInit{
 
 @Input() hero?:Hero  
 
@@ -30,7 +29,8 @@ constructor(
   private location : Location
 ){}
 
-ngOnit():void{
+
+ngOnInit(): void {
   this.getHero();
 }
 

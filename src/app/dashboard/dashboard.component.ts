@@ -4,6 +4,7 @@ import { HeroService } from '../hero.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgFor } from '@angular/common';
+import { RouterOutlet, RouterLink  } from '@angular/router';
 
 
 
@@ -11,7 +12,7 @@ import { NgFor } from '@angular/common';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule ,FormsModule,NgFor],
+  imports: [CommonModule ,FormsModule,NgFor,RouterOutlet,RouterLink],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
